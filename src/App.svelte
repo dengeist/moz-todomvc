@@ -13,6 +13,10 @@
   outline-offset: -2px;
 }
 
+ul {
+  list-style: none;
+}
+
 button {
   border: none;
   margin: 0;
@@ -86,10 +90,10 @@ button::-moz-focus-inner {
 }
 </style>
 
-  <div class="todoapp">
+<div class="todoapp">
   <form>
     <label for="new-todo-input" class="new-todo-label">What needs to be done?</label>
     <input type="text" id="new-todo-input" class="new-todo-input input__fw" name="text" autocomplete="off">
     <button type="submit" class="btn btn__primary btn__fw">Add</button>
   </form>
-  </div>
+</div>
