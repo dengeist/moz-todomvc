@@ -7,6 +7,62 @@
     <title>Todo MVC</title>
     <link rel="stylesheet" href="todo.css" />
     <link rel="stylesheet" href="bundle.css" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      *:focus {
+        outline: 2px dashed #000;
+      }
+      *[class*="fw"]:focus {
+        outline-offset: -2px;
+      }
+
+      body {
+        margin: 0;
+        font: 24px/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        line-height: 1.2;
+        color: #4d4d4d;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      button {
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        overflow: visible;
+
+        background: transparent;
+
+        /* inherit font & color from ancestor */
+        color: inherit;
+        font: inherit;
+
+        /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+        line-height: normal;
+
+        /* Corrects font smoothing for webkit */
+        -webkit-font-smoothing: inherit;
+        -moz-osx-font-smoothing: inherit;
+
+        /* Corrects inability to style clickable `input` types in iOS */
+        -webkit-appearance: none;
+      }
+
+      button::-moz-focus-inner {
+        border: 0;
+      }
+    </style>
   </head>
 
   <body>

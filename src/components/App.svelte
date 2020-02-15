@@ -1,49 +1,8 @@
 <script>
-	// import Button from "./Button.svelte";
+	import Item from "./Item.svelte";
 </script>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-*:focus {
-  outline: 2px dashed #000;
-}
-*[class*="fw"]:focus {
-  outline-offset: -2px;
-}
-
-ul {
-  list-style: none;
-}
-
-button {
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  overflow: visible;
-
-  background: transparent;
-
-  /* inherit font & color from ancestor */
-  color: inherit;
-  font: inherit;
-
-  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-  line-height: normal;
-
-  /* Corrects font smoothing for webkit */
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
-
-  /* Corrects inability to style clickable `input` types in iOS */
-  -webkit-appearance: none;
-}
-
-button::-moz-focus-inner {
-  border: 0;
-}
 
 .new-todo-label {
   display: block;
@@ -96,4 +55,7 @@ button::-moz-focus-inner {
     <input type="text" id="new-todo-input" class="new-todo-input input__fw" name="text" autocomplete="off">
     <button type="submit" class="btn btn__primary btn__fw">Add</button>
   </form>
+  <ul>
+    <Item />
+  </ul>
 </div>
