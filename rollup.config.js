@@ -3,7 +3,9 @@
 
 import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
+import css from "rollup-plugin-css-only";
 import commonjs from "@rollup/plugin-commonjs";
+import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 
 const production = !process.env.ROLLUP_WATCH;
@@ -17,6 +19,7 @@ export default {
     file: "public/bundle.js"
   },
   plugins: [
+    css({ output: "public/todo.css" }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,
@@ -26,6 +29,7 @@ export default {
         css.write("public/bundle.css");
       }
     }),
+    livereload("public"),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
