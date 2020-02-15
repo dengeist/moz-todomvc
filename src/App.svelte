@@ -10,9 +10,9 @@
 </style>
 
   <form>
-  <label for="new-todo">What needs to be done?</label>
-  <input type="text" id="new-todo" name="text">
-  <button type="submit">Add</button>
+    <label for="new-todo">What needs to be done?</label>
+    <input type="text" id="new-todo" name="text">
+    <button type="submit">Add</button>
   </form>
   <main>
-</main>
+  </main>
