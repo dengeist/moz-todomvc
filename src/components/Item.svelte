@@ -1,4 +1,25 @@
 <style>
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 0;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo.editing > .btn-group {
+  align-self: flex-end;
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
 .c-cb {
   display: inline-block;
 	padding-left: 1.5em;
@@ -131,20 +152,44 @@
 .c-cb > input:invalid:focus ~ label:before {
 	box-shadow: 0 0 0 2px #f00;
 }
-.btn-group {
-  float: right;
-  margin-top: 12px;
-  
+.btn-group,
+.form-group {
+  display: inline-block;
+}
+
+.todo-text {
+  display: block;
+  font-size: 18px;
+  line-height: 1.4;
 }
 </style>
 
+{#if isEditing}
+<li class="todo clearfix {isEditing ? 'editing': ''}">
+  <div class="form-group">
+    <label class="todo-text" for="todo-edit-foo">New name</label>
+  <input id="todo-toggle-foo" class="todo-text" type="input" />
+  </div>
+	<div class="btn-group u__float-right">
+	  <button type="button" class="btn btn__primary todo-edit">Edit</button>
+		<button type="button" class="btn todo-cancel">cancel</button>
+	</div>
+</li>
+{:else}
 <li class="todo">
   <div class="c-cb">
     <input id="todo-toggle-foo" class="todo-toggle" type="checkbox" checked/>
     <label class="todo-text" for="todo-toggle-foo">An item</label>
   </div>
-  <div class="btn-group">
+  <div class="btn-group u__float-right">
     <button type="button" class="btn todo-edit">Edit</button>
     <button type="button" class="btn btn__danger todo-delete">Destroy</button>
   </div>
 </li>
+{/if}
+
+
+<script>
+export let isEditing;
+console.log(isEditing)
+</script>

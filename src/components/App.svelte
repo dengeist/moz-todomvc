@@ -59,6 +59,6 @@ button {
     <button type="submit" class="btn btn__primary btn__fw">Add</button>
   </form>
   <ul>
-    <Item />
+    <Item isEditing/>
   </ul>
 </div>
