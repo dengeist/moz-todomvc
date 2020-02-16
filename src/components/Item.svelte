@@ -1,8 +1,4 @@
 <style>
-.todo {
-  padding: 0 60px;
-}
-
 .c-cb {
   display: inline-block;
 	padding-left: 1.5em;
@@ -135,7 +131,7 @@
 .c-cb > input:invalid:focus ~ label:before {
 	box-shadow: 0 0 0 2px #f00;
 }
-button {
+.btn-group {
   float: right;
   margin-top: 12px;
   
@@ -147,5 +143,8 @@ button {
     <input class="todo-toggle" type="checkbox" checked/>
     <label class="todo-text">An item</label>
   </div>
-  <button type="button" class="btn btn__danger todo-delete">Destroy</button>
+  <div class="btn-group">
+    <button type="button" class="btn todo-edit">Edit</button>
+    <button type="button" class="btn btn__danger todo-delete">Destroy</button>
+  </div>
 </li>
