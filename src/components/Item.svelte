@@ -140,8 +140,8 @@
 
 <li class="todo">
   <div class="c-cb">
-    <input class="todo-toggle" type="checkbox" checked/>
-    <label class="todo-text">An item</label>
+    <input id="todo-toggle-foo" class="todo-toggle" type="checkbox" checked/>
+    <label class="todo-text" for="todo-toggle-foo">An item</label>
   </div>
   <div class="btn-group">
     <button type="button" class="btn todo-edit">Edit</button>
