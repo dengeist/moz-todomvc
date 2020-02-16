@@ -4,6 +4,15 @@
 
 <style>
 
+.todoapp {
+  background:
+  #fff;
+  margin: 130px 0 40px 0;
+  position: relative;
+  box-shadow: 0 2px 4px 0
+rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
 form {
   padding: 0 60px;
 }
@@ -29,13 +38,21 @@ form {
   line-height: 1.4em;
   color: inherit;
   padding: 16px 60px;
-  border: none;
+  border: 2px solid #000;
   background:
   rgba(0, 0, 0, 0.003);
   box-shadow: inset 0 -2px 1px
   rgba(0,0,0,0.03);
 }
 
+.new-todo-input:focus {
+  border-color: #4d4d4d;
+  outline-offset: -6px;
+}
+
+button {
+  margin-top: 4px;
+}
 </style>
 
 <div class="todoapp">
