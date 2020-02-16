@@ -7,22 +7,19 @@
   position: relative;
   align-items: center;
   justify-content: space-between;
+
+  font-size: 18px;
+  line-height: 1.4;
 }
 
 .todo.editing > .btn-group {
   align-self: flex-end;
+  margin-left: auto;
 }
 
-.clearfix:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
-}
 .c-cb {
   display: inline-block;
-	padding-left: 1.5em;
+	padding-left: 1.4em;
   position: relative;
 }
 
@@ -92,7 +89,7 @@
 	width: 1.125em;
 	height: 1.125em;
 	left: .125em;
-	top: .825em;
+	top: .875em;
 }
 
 /**
@@ -105,7 +102,7 @@
 	border-right: 4px solid #565656;
 	height: .85em;
 	left: .425em;
-	top: .85em;
+	top: .875em;
 	transform-origin: center center;
 	transform: rotate(45deg) scale(0);
 	width: .5em;
@@ -165,31 +162,31 @@
 </style>
 
 {#if isEditing}
-<li class="todo clearfix {isEditing ? 'editing': ''}">
+<li class="todo {isEditing ? 'editing': ''}">
   <div class="form-group">
-    <label class="todo-text" for="todo-edit-foo">New name</label>
-  <input id="todo-toggle-foo" class="todo-text" type="input" />
+    <label class="todo-text" for={uniq}>Rename {name}</label>
+    <input id={uniq} class="todo-text" type="input" value={name}/>
   </div>
 	<div class="btn-group u__float-right">
+		<button type="button" class="btn todo-cancel">Cancel</button>
 	  <button type="button" class="btn btn__primary todo-edit">Edit</button>
-		<button type="button" class="btn todo-cancel">cancel</button>
 	</div>
 </li>
-{:else}
+{:else} 
 <li class="todo">
   <div class="c-cb">
-    <input id="todo-toggle-foo" class="todo-toggle" type="checkbox" checked/>
-    <label class="todo-text" for="todo-toggle-foo">An item</label>
+    <input id={uniq} class="todo-toggle" type="checkbox" checked={!isEditing && checked}/>
+    <label class="todo-text" for={uniq}>{name}</label>
   </div>
-  <div class="btn-group u__float-right">
+  <div class="btn-group">
     <button type="button" class="btn todo-edit">Edit</button>
-    <button type="button" class="btn btn__danger todo-delete">Destroy</button>
+    <button type="button" class="btn btn__danger todo-delete">Delete</button>
   </div>
 </li>
 {/if}
 
 
 <script>
-export let isEditing;
-console.log(isEditing)
+export let name, isEditing, checked, id;
+let uniq = 'todo-' + id;
 </script>

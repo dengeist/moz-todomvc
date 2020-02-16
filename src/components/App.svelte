@@ -1,5 +1,18 @@
 <script>
-	import Item from "./Item.svelte";
+  import Item from "./Item.svelte";
+  let items = [
+    {
+      id: '001',
+      name: 'Apple',
+      checked: false,
+      isEditing: false
+    },
+    { id: '002',
+      name: 'Oranges',
+      checked: false,
+      isEditing: true
+    }
+  ];
 </script>
 
 <style>
@@ -59,6 +72,8 @@ button {
     <button type="submit" class="btn btn__primary btn__fw">Add</button>
   </form>
   <ul>
-    <Item isEditing/>
+    { #each items as item }
+    <Item {...item} />
+    {/each}
   </ul>
 </div>
