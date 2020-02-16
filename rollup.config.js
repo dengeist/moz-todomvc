@@ -29,7 +29,7 @@ export default {
         css.write("public/bundle.css");
       }
     }),
-    livereload("public"),
+    !production && livereload("public"),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
