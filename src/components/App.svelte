@@ -4,6 +4,10 @@
 
 <style>
 
+form {
+  padding: 0 60px;
+}
+
 .new-todo-label {
   display: block;
   font-size: 24px;
@@ -32,21 +36,6 @@
   rgba(0,0,0,0.03);
 }
 
-.btn__primary {
-  color: #fff;
-  background-color: #000;
-}
-.btn__primary:focus {
-  outline: 2px dashed #fff;
-}
-
-.btn__fw {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  font-size: 24px;
-  line-height: 1.4;
-}
 </style>
 
 <div class="todoapp">
