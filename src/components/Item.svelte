@@ -3,13 +3,20 @@
 .todo {
   display: flex;
   flex-direction: row;
-  padding: 16px 0;
+  padding: 8px 0;
   position: relative;
   align-items: center;
   justify-content: space-between;
 
   font-size: 18px;
   line-height: 1.4;
+}
+
+.todo:first-of-type {
+  padding-top: 16px;
+}
+.todo:last-of-type {
+  padding-bottom: 16px;
 }
 
 .todo.editing > .btn-group {
